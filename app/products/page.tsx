@@ -7,8 +7,9 @@ type Product = {
 };
 
 async function getProducts(): Promise<Product[]> {
+   const port = process.env.PORT ?? 3000;
   const response = await fetch(
-    "http://localhost:3000/api/products",
+    `http://localhost:${port}/api/products`,
     {
       cache: "no-store"
     }
